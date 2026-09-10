@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Tribute to Sasmiithaa ✨</title>
+  
+  <!-- Google Fonts for Modern & Romantic Aesthetics -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Background Ambient Glows -->
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <!-- Interactive Particle Canvas for Floating Sparkles & Hearts -->
+  <canvas id="particlesCanvas"></canvas>
+
+  <div class="app-container">
+
+    <!-- ===============================================
+         PAGE 1: CELEBRATION & APPRECIATION FOR SASMIITHAA
+         (Proposal is carefully NOT revealed here!)
+         =============================================== -->
+    <main id="page1" class="page-view">
+      
+      <!-- Hero Header -->
+      <section class="hero-section">
+        <div class="special-badge">
+          <span>✨</span>
+          <span>A Special Tribute For Someone Extraordinary</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Everything That Makes <br>
+          <span class="name-highlight" id="heroName">Sasmiithaa</span>
+          <br>So Truly Wonderful
+        </h1>
+
+        <p class="hero-subtitle" id="heroSubtitle">
+          A special space dedicated to celebrating someone truly extraordinary.
+        </p>
+
+        <div class="hero-stats-bar">
+          <div class="stat-chip">
+            <span>☀️</span>
+            <span>100% Radiant Energy</span>
+          </div>
+          <div class="stat-chip">
+            <span>💖</span>
+            <span>Pure Heart of Gold</span>
+          </div>
+          <div class="stat-chip">
+            <span>✨</span>
+            <span>Effortless Charm</span>
+          </div>
+          <div class="stat-chip">
+            <span>🌸</span>
+            <span>One in 8 Billion</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1: The Core Qualities -->
+      <section class="section-wrapper">
+        <div class="section-header">
+          <span class="section-tag">THE QUALITIES</span>
+          <h2 class="section-title">Why You Are So Irresistibly Special</h2>
+        </div>
+        
+        <div class="qualities-grid" id="qualitiesGrid">
+          <!-- Populated dynamically via config.js -->
+        </div>
+      </section>
+
+      <!-- Section 2: Little Things -->
+      <section class="section-wrapper">
+        <div class="section-header">
+          <span class="section-tag">THE LITTLE THINGS</span>
+          <h2 class="section-title">A Few Undeniable Facts</h2>
+        </div>
+        
+        <div class="little-things-grid" id="littleThingsGrid">
+          <!-- Populated dynamically via config.js -->
+        </div>
+      </section>
+
+      <!-- Section 3: Interactive Compliment Crystal -->
+      <section class="section-wrapper">
+        <div class="section-header">
+          <span class="section-tag">JUST FOR YOU</span>
+          <h2 class="section-title">A Little Reminder of How Amazing You Are</h2>
+        </div>
+
+        <div class="compliment-box">
+          <div class="compliment-bubble">
+            <p class="compliment-text" id="complimentDisplay">
+              "You have a heart so genuine it makes the world feel softer."
+            </p>
+          </div>
+          <button class="compliment-btn" id="nextComplimentBtn">
+            <span>Give Me Another Reminder</span>
+            <span>✨</span>
+          </button>
+          <div class="compliment-counter" id="complimentCounter">
+            Tap the button to discover more sweet truths!
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: The Mystery Box Gateway (Bottom of Page 1) -->
+      <section class="mystery-container">
+        <div class="mystery-card">
+          <div class="gift-box-wrapper" id="giftBoxTrigger">
+            <div class="gift-box-aura"></div>
+            <div class="gift-box-icon" id="giftBoxIcon">🎁</div>
+          </div>
+
+          <span class="mystery-tag" id="mysteryTag">YOU'VE DISCOVERED ALL THESE REASONS...</span>
+          <h2 class="mystery-title" id="mysteryTitle">There is still one secret left waiting for you</h2>
+          <p class="mystery-desc" id="mysteryDesc">
+            I kept the most important truth locked inside this box. When you're ready, tap to open it.
+          </p>
+
+          <button class="open-box-btn" id="openMysteryBoxBtn">
+            <span id="openBoxBtnText">Open The Secret Box 🎁</span>
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- ===============================================
+         PAGE 2: THE GRAND REVEAL & PROPOSAL
+         (Revealed only when she unlocks the mystery box!)
+         =============================================== -->
+    <main id="page2" class="page-view hidden-page">
+      
+      <div class="reveal-badge">
+        <span>❤️</span>
+        <span id="revealTag">A CONFESSION FROM THE HEART</span>
+      </div>
+
+      <h1 class="reveal-headline">
+        <span class="gradient-love" id="revealHeadline">Sasmiithaa, I'm Truly In Love With You ❤️</span>
+      </h1>
+
+      <!-- Romantic Letter Card -->
+      <article class="romantic-letter-card">
+        <div class="letter-body" id="letterBody">
+          <!-- Dynamically populated from config.js -->
+        </div>
+      </article>
+
+      <!-- The Proposal Section -->
+      <section class="proposal-action-box">
+        <span class="proposal-tag" id="proposalTag">THE QUESTION</span>
+        <h2 class="proposal-question" id="proposalQuestion">
+          Will you make me the happiest person and be mine? 💍
+        </h2>
+
+        <!-- Interactive Buttons Arena -->
+        <div class="buttons-arena" id="buttonsArena">
+          <button class="yes-btn" id="yesBtn">
+            <span id="yesBtnText">YES, Absolutely! 💖</span>
+          </button>
+          
+          <button class="no-btn" id="noBtn">
+            <span id="noBtnText">No 🙈</span>
+          </button>
+        </div>
+
+        <div>
+          <button class="revisit-page1-btn" id="revisitPage1Btn">
+            ← Read what makes you extraordinary again
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Celebration Modal Overlay (Triggers on "YES!") -->
+  <div class="celebration-overlay" id="celebrationModal">
+    <div class="celebration-card">
+      <div class="celebration-icon">💍💖🎉</div>
+      <h2 class="celebration-title" id="celebrationTitle">SHE SAID YES! 🎉🥰</h2>
+      <p class="celebration-subtitle" id="celebrationSubtitle">
+        You just made me the happiest person in the entire world, Sasmiithaa!
+      </p>
+      <p class="celebration-note" id="celebrationNote">
+        From this moment forward, I promise to make you smile every single day. Here's to us and a lifetime of beautiful memories! ❤️🥂
+      </p>
+      <button class="close-celebration-btn" id="closeCelebrationBtn">
+        Keep Celebrating Forever ✨
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    Crafted with all my heart for <span id="footerName">Sasmiithaa</span> <span class="footer-heart">❤️</span>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

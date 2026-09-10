@@ -1,0 +1,938 @@
+/* ===================================================
+   SURPRISE PROPOSAL WEBSITE FOR SASMIITHAA
+   Vibrant, Modern, Ultra-Attractive Romantic UI
+   =================================================== */
+
+:root {
+  --primary-pink: #ff2a7a;
+  --primary-coral: #ff6584;
+  --primary-violet: #8e44ad;
+  --primary-purple: #6c5ce7;
+  --primary-gold: #feca57;
+  --primary-rose: #ff758c;
+  --bg-dark: #0f0c29;
+  --bg-gradient: linear-gradient(135deg, #0d091a 0%, #1f1035 40%, #2e0854 75%, #180b2a 100%);
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-border: rgba(255, 255, 255, 0.18);
+  --card-hover-border: rgba(255, 117, 140, 0.6);
+  --glass-shadow: 0 12px 35px 0 rgba(0, 0, 0, 0.37);
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-cursive: 'Caveat', cursive;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-gradient);
+  color: #ffffff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.6;
+}
+
+/* Background Animated Canvas */
+#particlesCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ambient Floating Glow Orbs */
+.ambient-glow {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatOrb 18s ease-in-out infinite alternate;
+}
+
+.glow-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #ff2a7a, transparent 70%);
+  top: -100px;
+  left: -100px;
+}
+
+.glow-2 {
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #6c5ce7, transparent 70%);
+  bottom: 5%;
+  right: -100px;
+  animation-duration: 22s;
+  animation-delay: -5s;
+}
+
+.glow-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #feca57, transparent 70%);
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+  animation-duration: 25s;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.15); }
+  100% { transform: translate(-40px, -60px) scale(0.95); }
+}
+
+/* Main App Container */
+.app-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Page Section Wrappers */
+.page-view {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hidden-page {
+  display: none !important;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.95);
+}
+
+/* ===================================================
+   PAGE 1: APPRECIATION FOR SASMIITHAA
+   =================================================== */
+
+/* Hero Header */
+.hero-section {
+  padding: 80px 15px 50px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.special-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  padding: 8px 22px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #ffd6e0;
+  box-shadow: 0 4px 20px rgba(255, 42, 122, 0.2);
+  margin-bottom: 24px;
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 42, 122, 0.2); }
+  50% { box-shadow: 0 0 25px rgba(255, 42, 122, 0.5), 0 0 35px rgba(254, 202, 87, 0.3); }
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.name-highlight {
+  background: linear-gradient(120deg, #ff758c 0%, #ff7eb3 40%, #feca57 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+  text-shadow: 0 10px 30px rgba(255, 117, 140, 0.3);
+}
+
+.hero-subtitle {
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  color: #e0d7f5;
+  max-width: 680px;
+  margin: 0 auto 35px;
+  font-weight: 300;
+  letter-spacing: 0.3px;
+}
+
+.hero-stats-bar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.stat-chip {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 40px;
+  padding: 10px 22px;
+  font-size: 0.95rem;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.stat-chip:hover {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateY(-2px);
+  border-color: rgba(255, 117, 140, 0.5);
+}
+
+/* Section Headings */
+.section-wrapper {
+  width: 100%;
+  margin: 50px 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-tag {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary-gold);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: #ffffff;
+}
+
+/* Grid of Qualities */
+.qualities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+  width: 100%;
+}
+
+.quality-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 30px 26px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--glass-shadow);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.quality-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-pink), var(--primary-gold), var(--primary-violet));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.quality-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--card-hover-border);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px rgba(255, 42, 122, 0.25);
+}
+
+.quality-card:hover::before {
+  opacity: 1;
+}
+
+.quality-icon {
+  font-size: 2.5rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+.quality-card h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.quality-card p {
+  color: #cfc8e6;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+/* Little Things Showcase */
+.little-things-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.little-thing-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 22px 20px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+
+.little-thing-card:hover {
+  background: rgba(255, 255, 255, 0.11);
+  transform: translateY(-4px);
+  border-color: rgba(254, 202, 87, 0.5);
+  box-shadow: 0 10px 25px rgba(254, 202, 87, 0.15);
+}
+
+.lt-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ff9ff3;
+  font-weight: 700;
+}
+
+.lt-value {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Interactive Compliment Crystal Card */
+.compliment-box {
+  background: linear-gradient(135deg, rgba(255, 105, 180, 0.12) 0%, rgba(108, 92, 231, 0.15) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 24px;
+  padding: 40px 30px;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  max-width: 750px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.compliment-bubble {
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.compliment-text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+  color: #ffffff;
+  line-height: 1.5;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.compliment-btn {
+  background: linear-gradient(45deg, #ff758c, #ff7eb3);
+  color: #ffffff;
+  border: none;
+  padding: 14px 34px;
+  border-radius: 40px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(255, 117, 140, 0.4);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.compliment-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(255, 117, 140, 0.6);
+  background: linear-gradient(45deg, #ff607d, #ff6ba8);
+}
+
+.compliment-btn:active {
+  transform: scale(0.98);
+}
+
+.compliment-counter {
+  margin-top: 15px;
+  font-size: 0.88rem;
+  color: #d1c7eb;
+}
+
+/* ===================================================
+   MYSTERY BOX SECTION (THE CLIMAX OF PAGE 1)
+   =================================================== */
+.mystery-container {
+  width: 100%;
+  margin: 90px 0 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.mystery-card {
+  background: linear-gradient(135deg, rgba(255, 42, 122, 0.15) 0%, rgba(142, 68, 173, 0.25) 50%, rgba(254, 202, 87, 0.1) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  border-radius: 32px;
+  padding: 60px 40px;
+  max-width: 780px;
+  width: 100%;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 25px 60px rgba(255, 42, 122, 0.25), 0 0 40px rgba(142, 68, 173, 0.3);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.mystery-card:hover {
+  border-color: rgba(255, 117, 140, 0.8);
+  box-shadow: 0 30px 80px rgba(255, 42, 122, 0.4), 0 0 60px rgba(254, 202, 87, 0.3);
+}
+
+/* 3D Animated Gift Box Graphic */
+.gift-box-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 30px;
+  cursor: pointer;
+}
+
+.gift-box-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(255, 117, 140, 0.6) 0%, rgba(254, 202, 87, 0.2) 50%, transparent 75%);
+  border-radius: 50%;
+  animation: auraPulse 2.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes auraPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+}
+
+.gift-box-icon {
+  font-size: 5.5rem;
+  line-height: 1;
+  display: inline-block;
+  animation: floatBox 3s ease-in-out infinite alternate;
+  filter: drop-shadow(0 15px 25px rgba(255, 42, 122, 0.5));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gift-box-wrapper:hover .gift-box-icon {
+  transform: scale(1.18) rotate(-4deg);
+}
+
+@keyframes floatBox {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+  100% { transform: translateY(-4px) rotate(-3deg); }
+}
+
+.mystery-tag {
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--primary-gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.mystery-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  color: #ffffff;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.mystery-desc {
+  font-size: 1.15rem;
+  color: #e5def5;
+  max-width: 580px;
+  margin: 0 auto 35px;
+}
+
+.open-box-btn {
+  background: linear-gradient(135deg, #ff2a7a 0%, #ff758c 50%, #feca57 100%);
+  color: #ffffff;
+  border: none;
+  padding: 18px 45px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 12px 35px rgba(255, 42, 122, 0.5);
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: 0.5px;
+  animation: glowButton 2s infinite alternate;
+}
+
+@keyframes glowButton {
+  0% { box-shadow: 0 8px 25px rgba(255, 42, 122, 0.5); }
+  100% { box-shadow: 0 15px 45px rgba(255, 42, 122, 0.85), 0 0 30px rgba(254, 202, 87, 0.6); }
+}
+
+.open-box-btn:hover {
+  transform: translateY(-5px) scale(1.06);
+  box-shadow: 0 20px 50px rgba(255, 42, 122, 0.8);
+}
+
+.open-box-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===================================================
+   PAGE 2: THE GRAND ROMANTIC REVEAL & PROPOSAL
+   =================================================== */
+
+#page2 {
+  padding: 60px 15px 120px;
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.reveal-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 42, 122, 0.25);
+  border: 1px solid rgba(255, 42, 122, 0.5);
+  color: #ff99b6;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  animation: pulseGlow 2.5s infinite;
+}
+
+.reveal-headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 35px;
+  color: #ffffff;
+  text-shadow: 0 10px 40px rgba(255, 42, 122, 0.5);
+}
+
+.reveal-headline .gradient-love {
+  background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 50%, #feca57 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Romantic Letter Card */
+.romantic-letter-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  padding: 45px 35px;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  margin-bottom: 50px;
+  text-align: left;
+  position: relative;
+}
+
+.romantic-letter-card::before {
+  content: '💌';
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.2rem;
+  background: #250938;
+  border: 2px solid rgba(255, 117, 140, 0.6);
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(255, 42, 122, 0.4);
+}
+
+.letter-body p {
+  font-size: clamp(1.08rem, 2.2vw, 1.25rem);
+  color: #f1edfa;
+  margin-bottom: 22px;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.letter-body p:last-child {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: clamp(1.15rem, 2.4vw, 1.35rem);
+}
+
+/* The Proposal Box & Question */
+.proposal-action-box {
+  background: radial-gradient(circle, rgba(255, 42, 122, 0.2) 0%, rgba(46, 8, 84, 0.4) 100%);
+  border: 2px solid rgba(255, 117, 140, 0.4);
+  border-radius: 32px;
+  padding: 55px 30px;
+  box-shadow: 0 20px 60px rgba(255, 42, 122, 0.3);
+  position: relative;
+  width: 100%;
+}
+
+.proposal-tag {
+  font-size: 0.95rem;
+  letter-spacing: 3px;
+  font-weight: 800;
+  color: var(--primary-gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.proposal-question {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-weight: 800;
+  margin-bottom: 40px;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+/* Proposal Action Buttons */
+.buttons-arena {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  min-height: 120px;
+  position: relative;
+}
+
+.yes-btn {
+  background: linear-gradient(135deg, #ff2a7a 0%, #ff4b2b 100%);
+  color: #ffffff;
+  border: none;
+  padding: 20px 50px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 15px 40px rgba(255, 42, 122, 0.6);
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  animation: pulseYes 2s infinite;
+  z-index: 10;
+}
+
+@keyframes pulseYes {
+  0% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 42, 122, 0.5); }
+  50% { transform: scale(1.08); box-shadow: 0 20px 50px rgba(255, 42, 122, 0.85), 0 0 35px rgba(254, 202, 87, 0.6); }
+  100% { transform: scale(1); box-shadow: 0 10px 30px rgba(255, 42, 122, 0.5); }
+}
+
+.yes-btn:hover {
+  transform: scale(1.15) !important;
+  box-shadow: 0 25px 60px rgba(255, 42, 122, 0.9);
+}
+
+.no-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #d1c7eb;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 16px 36px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+  position: relative;
+  z-index: 9;
+  user-select: none;
+}
+
+/* Playful reaction popup for runaway No button */
+.no-reaction-tooltip {
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  color: #1a0b2e;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+  0% { transform: translateX(-50%) scale(0.6); opacity: 0; }
+  100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+/* Back button to re-read Page 1 */
+.revisit-page1-btn {
+  margin-top: 50px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #d1c7eb;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.revisit-page1-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ===================================================
+   CELEBRATION OVERLAY MODAL (ON "YES!")
+   =================================================== */
+.celebration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(13, 9, 26, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.celebration-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.celebration-card {
+  background: linear-gradient(135deg, rgba(255, 42, 122, 0.2) 0%, rgba(108, 92, 231, 0.25) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 36px;
+  padding: 60px 40px;
+  max-width: 650px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(255, 42, 122, 0.5);
+  transform: scale(0.85);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.celebration-overlay.active .celebration-card {
+  transform: scale(1);
+}
+
+.celebration-icon {
+  font-size: 5rem;
+  margin-bottom: 20px;
+  display: inline-block;
+  animation: bounceCelebration 1.5s infinite alternate;
+}
+
+@keyframes bounceCelebration {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-15px) scale(1.1); }
+}
+
+.celebration-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.celebration-subtitle {
+  font-size: 1.3rem;
+  color: #ffd6e0;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.celebration-note {
+  font-size: 1.1rem;
+  color: #e3dcf5;
+  line-height: 1.7;
+  margin-bottom: 35px;
+}
+
+.close-celebration-btn {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: #ffffff;
+  border: none;
+  padding: 14px 38px;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(255, 117, 140, 0.4);
+  transition: all 0.3s ease;
+}
+
+.close-celebration-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 30px rgba(255, 117, 140, 0.7);
+}
+
+/* ===================================================
+   FOOTER
+   =================================================== */
+.site-footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #9f96b5;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-heart {
+  color: #ff2a7a;
+  display: inline-block;
+  animation: heartPulse 1.2s infinite;
+}
+
+@keyframes heartPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN
+   =================================================== */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 60px 10px 40px;
+  }
+  
+  .qualities-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mystery-card {
+    padding: 40px 20px;
+  }
+
+  .open-box-btn {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+  }
+
+  .romantic-letter-card {
+    padding: 35px 22px;
+  }
+
+  .proposal-action-box {
+    padding: 40px 18px;
+  }
+
+  .buttons-arena {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .yes-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 18px 30px;
+    font-size: 1.25rem;
+  }
+
+  .no-btn {
+    width: 100%;
+  }
+
+  .celebration-card {
+    padding: 40px 20px;
+  }
+}
